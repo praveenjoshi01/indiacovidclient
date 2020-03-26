@@ -43,7 +43,7 @@
 		document.getElementById("confirmed").innerHTML = res['confirmed'];
 		document.getElementById("recovered").innerHTML = res['recovered'];
 		document.getElementById("deaths").innerHTML = res['death'];
-		document.getElementById("update").innerHTML = n;
+		document.getElementById("update").innerHTML = n.slice(0, -3);;
         }
     });
 	
