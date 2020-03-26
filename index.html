@@ -36,9 +36,14 @@
         url: "https://indiapicororno.herokuapp.com/countrystatus",
         type: 'GET',
         success: function(res) {
+		var d = new Date();
+		var n = d.toLocaleTimeString();
+		var n1 =d.toLocaleDateString();
+		document.getElementById("needDate").innerHTML = "Indian COVID Statistics- " +n1;
 		document.getElementById("confirmed").innerHTML = res['confirmed'];
 		document.getElementById("recovered").innerHTML = res['recovered'];
 		document.getElementById("deaths").innerHTML = res['death'];
+		document.getElementById("update").innerHTML = n;
         }
     });
 	
@@ -81,10 +86,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+      <div class="container-fluid center">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Indian COVID Statistics</h1>
+            <h1 class="m-0 text-dark" id="needDate">Indian COVID Statistics- </h1> 
           </div><!-- /.col -->
           <div class="col-sm-6">
           </div><!-- /.col -->
@@ -140,6 +145,21 @@
             </div>
           </div>
           <!-- ./col -->
+          <!-- ./col -->
+           <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <h2 id="update">X</h3>
+
+                <p>Updated On</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-eye"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
@@ -156,7 +176,7 @@
                 <div class="card-tools">
                 </div>
               </div><!-- /.card-header -->
-              <div class="card-body table-responsive">
+              <div class="card-body table-responsive"">
 				<table class="table" id="table">
 				  <thead>
 					<tr>
@@ -177,6 +197,33 @@
             <!-- /.card -->
 
 
+          </section>
+          <!-- /.Left col -->
+        </div>
+		
+		        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-12 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar mr-1"></i>
+                  Disclaimer:
+                </h3>
+                <div class="card-tools">
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body table-responsive"">
+				<p>
+				This website is updated on the real time basis from the <a href='https://www.mohfw.gov.in'>Indian Government Portal</a>.</br> Purpose of this website is non-monetary and solely used for creating awareness.
+				</p>
+			  
+				
+				
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
           </section>
           <!-- /.Left col -->
         </div>
